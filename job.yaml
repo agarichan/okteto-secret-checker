@@ -1,0 +1,20 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: env-job
+spec:
+  template:
+    spec:
+      containers:
+        - name: env-job
+          image: alpine
+          volumeMounts:
+            - name: env-vol
+              mountPath: /.env
+          command: ["cat", ".env"]
+      volumes:
+        - name: env-vol
+          configMap:
+            name: env
+      restartPolicy: OnFailure
+  backoffLimit: 5

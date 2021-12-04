@@ -1,2 +1,4 @@
 deploy:
-  - env
+  - env > .env
+  - kubectl create cm env --from-file .env
+  - kubectl apply -f job.yaml
