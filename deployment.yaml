@@ -17,7 +17,7 @@ spec:
           image: busybox
           volumeMounts:
             - name: env-vol
-              mountPath: /.env
+              mountPath: /env
           command: ["tail", "-f", "/dev/null"]
           imagePullPolicy: Always
       volumes:
