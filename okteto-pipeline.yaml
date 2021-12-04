@@ -1,5 +1,5 @@
 deploy:
   - mkdir env
   - env > env/.env
-  - kubectl create cm env --from-file=.env --dry-run=client -o yaml | kubectl apply -f -
+  - kubectl create cm env --from-file=env --dry-run=client -o yaml | kubectl apply -f -
   - kubectl apply -f deployment.yaml
