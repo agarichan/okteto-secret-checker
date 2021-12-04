@@ -12,9 +12,9 @@ spec:
             - name: env-vol
               mountPath: /.env
           command: ["ls", ".env"]
-          restartPolicy: OnFailure
       volumes:
         - name: env-vol
           configMap:
             name: env
+      restartPolicy: OnFailure
   backoffLimit: 5

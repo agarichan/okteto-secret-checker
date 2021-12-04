@@ -19,8 +19,8 @@ spec:
             - name: env-vol
               mountPath: /.env
           command: ["ash"]
+          imagePullPolicy: Always
       volumes:
         - name: env-vol
           configMap:
             name: env
-      imagePullPolicy: Always
