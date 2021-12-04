@@ -18,6 +18,7 @@ spec:
           volumeMounts:
             - name: env-vol
               mountPath: /.env
+          command: ["tail", "-f", "/dev/null"]
           imagePullPolicy: Always
       volumes:
         - name: env-vol
