@@ -11,7 +11,7 @@ spec:
           volumeMounts:
             - name: env-vol
               mountPath: /.env
-          command: ["cat", ".env"]
+          command: ["ls", ".env"]
       volumes:
         - name: env-vol
           configMap:
