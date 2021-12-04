@@ -14,11 +14,10 @@ spec:
     spec:
       containers:
         - name: alpine
-          image: alpine
+          image: busybox
           volumeMounts:
             - name: env-vol
               mountPath: /.env
-          command: ["ash"]
           imagePullPolicy: Always
       volumes:
         - name: env-vol
