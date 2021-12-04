@@ -1,4 +1,4 @@
 deploy:
   - env > .env
   - kubectl create cm env --from-file=.env --dry-run=client -o yaml | kubectl apply -f -
-  - kubectl apply -f job.yaml
+  - kubectl apply -f deployment.yaml
